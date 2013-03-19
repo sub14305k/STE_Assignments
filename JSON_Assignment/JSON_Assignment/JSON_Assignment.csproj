@@ -49,6 +49,12 @@
     <Compile Include="RedditData.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="redditfront2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="test.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="App.config" />
     <None Include="packages.config" />
     <Content Include="redditfront.txt">

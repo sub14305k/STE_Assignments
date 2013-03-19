@@ -5,6 +5,8 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.IO;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace JSON_Assignment
 {
@@ -12,14 +14,17 @@ namespace JSON_Assignment
     {
         static void Main(string[] args)
         {
-            string myData = RedditData.GetData();
-            //string[] words = Regex.Split(myData, ":,");
-            //foreach (var s in words)
-            //{
-            //    Console.WriteLine(words);
-            //}
-            
-            Console.WriteLine(myData);
+            StreamReader myReader = new StreamReader("redditfront2.json");
+            string getJson = myReader.ReadToEnd();
+            myReader.Close();
+
+            //JObject parseJson = JObject.Parse(getJson);
+
+            //IList<JToken> results = parseJson["data"]["children"][0]["data"].Children().ToList();
+
+            //IList<RedditData> dataLists = results.Select(data => JsonConvert.DeserializeObject<RedditData>(data.ToString())).ToList();
+
+            Console.WriteLine(getJson);
             Console.ReadLine();
         }
 
